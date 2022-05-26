@@ -1,0 +1,11 @@
+[
+    {
+        "id": "8dec8804-b018-4490-a62e-debfdb7b6b08",
+        "email": "n@gmail.com",
+        "firstname": "Nnaemeka",
+        "lastname": "Okarazu",
+        "password": "pass",
+        "balance": 1000,
+        "dateCreated": "5/16/2022"
+    }
+]
