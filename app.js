@@ -4,9 +4,12 @@ const routes = require('./routes/routes');
 const port = 3000;
 
 app.use(express.json());
+app.set('view engine', 'hbs');
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
 
 app.get('/', (req, res) => {
-    res.send("Welcome to the Bank App!");
+    res.render('index');
 });
 
 app.use('/', routes);

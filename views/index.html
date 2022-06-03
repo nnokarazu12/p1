@@ -8,12 +8,6 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <button onclick="getUser()">Click</button>
-    <script>
-        fetch('localhost:3000/databases/users.json')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
-    </script>
+    <button onclick="location.href='/api/users'">Click</button>
 </body>
 </html>
