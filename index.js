@@ -1,7 +1,14 @@
 const axios = require('axios').default;
+const auth = require('./controllers/auth');
 
-function getUser() {
-    axios.get('/api/users')
+function login() {
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+    axios.post('/api/auth', {
+        email,
+        password
+    })
     .then(response => {
         console.log(response);
     })
@@ -9,4 +16,4 @@ function getUser() {
         console.log(err);
     });
 }
-getUser();
+//getUser();

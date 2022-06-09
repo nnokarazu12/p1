@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#login-form {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 400px;
+    height: auto;
+}
+#login-form input[type="text"] {
+    width: 100%;
+}

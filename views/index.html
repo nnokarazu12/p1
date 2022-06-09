@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banking Application</title>
-    <script src="index.js"></script>
+    <link href="public/index.css" rel="stylesheet">
+    <script defer src=""></script>
 </head>
 <body>
-    <button onclick="location.href='/api/users'">Click</button>
+    <form id="login-form" action="/api/auth" method="get">
+        <input id="email" name="email" placeholder="Email"><br/><br/>
+        <input id="password" name="password" placeholder="Password"><br/>
+        <button onclick="login(event)">Login</button>
+    </form>
+    <!--<button onclick="get()">Click</button>-->
+    <script>
+        async function login(event) {
+            event.preventDefault();
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+
+            let response = await fetch('/api/users');
+
+            let result = await response.json();
+
+            let loginSuccess = email === result[0].email && password === result[0].password;
+            if (loginSuccess)
+                console.log("Login successful!");
+            else
+                console.log("Login failed.");
+        }
+    </script>
 </body>
 </html>

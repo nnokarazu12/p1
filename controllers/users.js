@@ -2,7 +2,6 @@ const {v4: uuidv4} = require('uuid');
 const fs = require('fs');
 const path = require('path');
 const users = require('../databases/users.json');
-const res = require('express/lib/response');
 
 const usersFile = '../p1/databases/users.json';
 
