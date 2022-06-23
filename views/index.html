@@ -5,32 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banking Application</title>
+    <!--<link href="/styles/index.css" rel="stylesheet">-->
     <link href="index.css" rel="stylesheet">
-    <script defer src=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script defer src="index.js"></script>
 </head>
 <body>
-    <form id="login-form" action="/api/auth" method="get">
-        <input id="email" name="email" placeholder="Email"><br/><br/>
-        <input id="password" name="password" placeholder="Password"><br/>
-        <button onclick="login(event)">Login</button>
+    <div id="main-container">
+        <div id="title-card">
+            <p>Online Banking V1.0</p>
+            <!--<img src="/images/title-img.jpg" alt="title card image"/>-->
+        </div>
+        <div id="form-container">
+            <h1>Login to your account</h1>
+            <form id="login-form">
+            <input id="email" name="email" placeholder="Email"><br/><br/>
+            <input id="password" name="password" placeholder="Password"><br/><br/>
+            <div onclick="login(event)" id="login-btn" role="button">Login</div>
     </form>
+        </div>
+    </div>
     <!--<button onclick="get()">Click</button>-->
-    <script>
-        async function login(event) {
-            event.preventDefault();
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('password').value;
-
-            let response = await fetch('/api/users');
-
-            let result = await response.json();
-
-            let loginSuccess = email === result[0].email && password === result[0].password;
-            if (loginSuccess)
-                console.log("Login successful!");
-            else
-                console.log("Login failed.");
-        }
-    </script>
 </body>
 </html>
