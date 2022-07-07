@@ -9,10 +9,13 @@ async function login(event) {
 
   let result = await response.json();
 
-  let loginSuccess = email === result[0].email && password === result[0].password;
+  console.log(result);
+
+  /*let loginSuccess = email === result[0].email && password === result[0].password;
   if (loginSuccess) 
     console.log("Login successful!");
   else 
     console.log("Login failed.");
+    */
 }
 //getUser();

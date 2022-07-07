@@ -11,7 +11,7 @@ app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('home');
 });
 
 app.use('/', routes);

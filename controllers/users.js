@@ -7,7 +7,8 @@ const usersFile = '../p1/databases/users.json';
 
 //Return users
 const getUsers = (req, res) => {
-    res.send(users);
+    //res.send(users);
+    res.render('home');
 }
 
 //Add new user to json database
