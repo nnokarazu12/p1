@@ -1,15 +1,21 @@
 //const axios = require('axios').default;
 //const auth = require('../controllers/auth');
-async function login(event) {
+function login(event) {
   event.preventDefault();
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
 
-  let response = await fetch("/api/users");
+  sessionStorage.setItem("email", email);
+  sessionStorage.setItem("password", password);
 
-  let result = await response.json();
+  email = "";
+  password = "";
+  location.href = "/home.html";
+  //let response = await fetch("/api/users");
 
-  console.log(result);
+  //let result = await response.json();
+
+  //console.log(result);
 
   /*let loginSuccess = email === result[0].email && password === result[0].password;
   if (loginSuccess) 

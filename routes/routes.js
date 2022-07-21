@@ -13,4 +13,9 @@ router.delete('/api/users/:id', users.deleteUser);
 //Authentication
 router.post('/api/auth', auth.authenticateUser);
 
+//Pages
+/*router.get('/home', (req, res) => {
+    res.send('home');
+});*/
+
 module.exports = router;
