@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script defer src="index.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -17,7 +18,7 @@
             <p>Hello, Nnaemeka</p>
         </div>
 
-        <div id="log-out">
+        <div id="log-out" onclick="logout()">
             <p>Log out</p>
         </div>
     </div>
@@ -25,9 +26,15 @@
         <div class="block-head">Checking</div>
         <div class="block-body">
             <h2>$0.00</h2>
-            <div class="basic-btn">
+            <div class="basic-btn" onclick="confirmDeposit()">
                 Deposit
             </div>
+            <!--<div class="deposit-box">
+                <p>Amount</p>
+                <input type="number" min="0" max="5000"/>
+                <div class="basic-btn">Confirm</div>
+            </div>
+        -->
         </div>
     </div>
     <div class="block">

@@ -24,4 +24,21 @@ function login(event) {
     console.log("Login failed.");
     */
 }
+function confirmDeposit() {
+  let amount = prompt("How much to deposit?");
+  let a = {
+    balance: Number(amount)
+  };
+  fetch("/api/uuser", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(a)
+  })
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log(error);
+    })
+}
 //getUser();

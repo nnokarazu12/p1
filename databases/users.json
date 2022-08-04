@@ -5,7 +5,7 @@
         "firstname": "Nnaemeka",
         "lastname": "Okarazu",
         "password": "pass",
-        "balance": 1000,
+        "balance": 0,
         "dateCreated": "5/16/2022"
     }
 ]

@@ -7,8 +7,8 @@ const usersFile = '../p1/databases/users.json';
 
 //Return users
 const getUsers = (req, res) => {
-    //res.send(users);
-    res.redirect('home');
+    res.send(users);
+    //res.redirect('home');
 }
 
 //Add new user to json database
@@ -19,7 +19,7 @@ const addUser = (req, res) => {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         password: req.body.password,
-        balance: 1000,
+        balance: 0,
         dateCreated: new Date().toLocaleDateString()
     }
     fs.readFile(usersFile, (err, data) => {
@@ -66,9 +66,19 @@ const deleteUser = (req, res) => {
     });
 }
 
+const updateUser = (req, res) => {
+    let email = "n@gmail.com";
+    let amount = req.body.balance;
+    const user = users.find((u) => u.email === email);
+    user.balance +=amount;
+    res.send(users);
+    console.log("Deposited ", amount + "to your account");
+}
+
 module.exports = {
     getUsers,
     addUser,
     getUser,
-    deleteUser
+    deleteUser,
+    updateUser
 };
